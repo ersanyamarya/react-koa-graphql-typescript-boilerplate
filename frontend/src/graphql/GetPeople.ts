@@ -8,15 +8,15 @@
 // ====================================================
 
 export interface GetPeople_personMany {
-  __typename: "Person";
-  _id: any;
-  lastName: string;
-  firstName: string;
-  email: string;
-  updatedAt: any | null;
-  createdAt: any | null;
+  __typename: 'Person'
+  _id: any
+  lastName: string
+  firstName: string
+  email: string
+  updatedAt: any | null
+  createdAt: any | null
 }
 
 export interface GetPeople {
-  personMany: GetPeople_personMany[];
+  personMany: GetPeople_personMany[]
 }

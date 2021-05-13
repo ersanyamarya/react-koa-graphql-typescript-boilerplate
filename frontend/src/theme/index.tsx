@@ -78,7 +78,7 @@ const theme = responsiveFontSizes(
 
 theme.typography.h1 = {
   fontFamily,
-  fontSize: '5em',
+  fontSize: '5.2em',
   [theme.breakpoints.down('md')]: {
     fontSize: '5.5em',
   },

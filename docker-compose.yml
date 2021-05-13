@@ -1,29 +1,40 @@
 version: "3"
 services:
-  # boilerplate:
+  # backend:
   #   build:
-  #     context: .
+  #     context: ./backend
   #     dockerfile: Dockerfile
   #   ports:
   #     - "3000:3000"
   #   volumes:
   #     - ./backend:/home/node/app
-  #     - /home/node/code/node_modules
   #   env_file:
   #     - backend/.env
-  #   command: develop
+  #   command: npm run develop
 
-  mongo:
-    image: mongo
-    restart: always
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - 27017:27017
+      - "3000:3000"
     volumes:
-      - ./mongodata/data:/data/db
-      - ./mongodata/log:/data/log
+      - ./frontend:/home/node/app
+    env_file:
+      - frontend/.env
+    command: npm start
 
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - 8081:8081
+  # mongo:
+  #   image: mongo
+  #   restart: always
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - ./mongodata/data:/data/db
+  #     - ./mongodata/log:/data/log
+
+  # mongo-express:
+  #   image: mongo-express
+  #   restart: always
+  #   ports:
+  #     - 8081:8081

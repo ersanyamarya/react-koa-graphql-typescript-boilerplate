@@ -43,6 +43,12 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['@material-ui/*/*/*', '!@material-ui/core/test-utils/*'],
+      },
+    ],
     // 'no-use-before-define': 'off',
   },
 }
