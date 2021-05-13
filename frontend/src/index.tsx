@@ -26,7 +26,7 @@ const Application = () => (
         <ApolloProvider client={client}>
           <Router>
             <RouterPage path="/" pageComponent={<Components />} />
-            <RouterPage path="/People" pageComponent={<People />} />
+            <RouterPage path="/people" pageComponent={<People />} />
             <RouterPage default pageComponent={<NotFound />} />
           </Router>
         </ApolloProvider>
