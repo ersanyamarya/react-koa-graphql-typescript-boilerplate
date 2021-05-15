@@ -5,37 +5,33 @@ services:
   #   restart: unless-stopped
   #   ports:
   #     - "80:80"
-  #     - "443:443"
-  #     - "9090:9090"
   #   volumes:
   #     - ./nginx/log:/var/log/nginx
   #     - ./frontend/dist/:/var/www/web
   #     - ./nginx/conf:/etc/nginx/conf.d
   #   command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
 
-  backend:
-    # links:
-    #   - mongo
+  api:
+    links:
+      - mongo
     build:
       context: ./backend
-      dockerfile: prod.Dockerfile
+      dockerfile:prod.Dockerfile
     ports:
       - "3000:3000"
     env_file:
       - backend/.env
-    command: node index.js
+    command: node server
 
-  # mongo:
-  #   image: mongo
-  #   restart: always
-  #   ports:
-  #     - 27017:27017
-  #   volumes:
-  #     - ./mongodata/data:/data/db
-  #     - ./mongodata/log:/data/log
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - ./mongodata/data:/data/db
+      - ./mongodata/log:/data/log
 
-  # mongo-express:
-  #   image: mongo-express
-  #   restart: always
-  #   ports:
-  #     - 8081:8081
+  mongo-express:
+    links:
+      - mongo
+    image: mongo-express
+    restart: always

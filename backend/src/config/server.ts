@@ -6,6 +6,7 @@ export default {
   port: Number.parseInt(env('CONTAINER_PORT', '3000')),
 
   healthPath: `${env('HEALTH_CHECK_PATH', '/health')}`,
+  graphqlPath: `${env('GRAPHQL_PATH', '/health')}`,
 
   log: {
     level: env('LOG_LEVEL', 'info'),

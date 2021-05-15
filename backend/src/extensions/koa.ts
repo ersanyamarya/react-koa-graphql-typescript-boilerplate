@@ -29,12 +29,14 @@ export default (logger: Logger, healthChecks?: HealthChecks): Koa => {
         checks[service] = callback()
       })
     }
-    ctx.body = checks
+    ctx.body = { ...checks, developer: 'Sanyam Arya' }
   })
-  router.post('/graphql', server().getMiddleware())
-  router.get('/graphql', server().getMiddleware())
+  router.post(serverConfig.graphqlPath, server().getMiddleware())
+  router.get(serverConfig.graphqlPath, server().getMiddleware())
 
   app.use(router.routes())
   app.use(router.allowedMethods())
   return app
 }
+
+console.log('Sanyam arya')

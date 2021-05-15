@@ -1,10 +1,8 @@
 node_modules/
-build/
+dist
 .github
 .devcontainer
 docker-compose.yml
-docker-compose.override.yml
 Dockerfile
-local.Dockerfile
-out/
-mongodata/
+prod.Dockerfile
+out
