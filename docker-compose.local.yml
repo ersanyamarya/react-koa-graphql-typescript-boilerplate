@@ -15,8 +15,6 @@ services:
     command: npm run develop
 
   mongo:
-    links:
-      - mongo
     image: mongo
     restart: always
     volumes:
@@ -26,5 +24,7 @@ services:
   mongo-express:
     links:
       - mongo
+    ports:
+      - 8081:8081
     image: mongo-express
     restart: always

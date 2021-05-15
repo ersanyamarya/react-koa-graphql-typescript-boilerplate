@@ -29,7 +29,16 @@ export default (logger: Logger, healthChecks?: HealthChecks): Koa => {
         checks[service] = callback()
       })
     }
-    ctx.body = { ...checks, developer: 'Sanyam Arya' }
+    ctx.body = {
+      checks,
+      misc: {
+        server: 'CloudChef Kitchen Manager GQL API',
+        developer: {
+          name: 'Sanyam Arya',
+          email: 'er.sanyam.arya@gmail.com',
+        },
+      },
+    }
   })
   router.post(serverConfig.graphqlPath, server().getMiddleware())
   router.get(serverConfig.graphqlPath, server().getMiddleware())

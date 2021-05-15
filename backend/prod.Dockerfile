@@ -5,7 +5,16 @@ WORKDIR /home/node/app
 
 COPY package.json package-lock.json ./
 RUN npm ci
-COPY ./build ./
+COPY . .
+ENV NODE_ENV=production
+RUN npm run build
 
-EXPOSE 3000
+FROM node:lts-alpine3.13
 
+ENV NODE_ENV=production
+
+WORKDIR /home/node/app
+COPY --from=build --chown=node:node /home/node/app/dist ./
+COPY package.json package-lock.json ./
+RUN npm install --production
+CMD [ "node", "server" ]
