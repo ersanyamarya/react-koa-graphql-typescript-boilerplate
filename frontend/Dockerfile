@@ -1,14 +1,8 @@
+FROM node:lts-alpine3.13
 
-FROM i386/ubuntu
-
-RUN sudo apt-get update && apt-get install -y \
-    curl \
-    python \
-    make \
-    g++
-RUN curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-RUN sudo apt-get install -y nodejs
+RUN apk add --update --no-cache --virtual .build-deps alpine-sdk python3 py3-pip
 RUN npm install -g npm
+
 
 WORKDIR /home/node/app
 

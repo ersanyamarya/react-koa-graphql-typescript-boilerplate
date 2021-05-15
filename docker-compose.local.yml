@@ -1,5 +1,17 @@
 version: "3"
 services:
+  ui:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    env_file:
+      - frontend/.env
+    volumes:
+      - ./frontend/src:/home/node/app/src
+    command: npm run parcel:start
+
   backend:
     links:
       - mongo

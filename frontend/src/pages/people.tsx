@@ -13,8 +13,8 @@ export default function People(): ReactElement {
     <Fragment>
       {data.personMany.map(one => (
         <Fragment key={one.email}>
-          <Typography variant="h1">{`${one.firstName} ${one.lastName}`}</Typography>
-          <Typography variant="h2">{one.email}</Typography>
+          <Typography variant="h1">Name: {`${one.firstName} ${one.lastName}`}</Typography>
+          <Typography variant="h2">Email: {one.email}</Typography>
           <Divider />
           <br />
         </Fragment>

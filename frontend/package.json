@@ -4,10 +4,10 @@
   "description": "Boiler plate code for React with TypeScript Material-ui Parcel bundler and Apollo GraphQL",
   "main": "dist/index.html",
   "scripts": {
+    "start": "parcel serve 'src/index.html' -p 4200 --open",
+    "build": "parcel build './src/index.html' --dist-dir build",
     "prebuild": "npm run clean",
-    "build": "parcel build src/index.html --no-source-maps --no-cache",
     "clean": "rimraf ./dist ./.parcel-cache",
-    "start": "parcel src/index.html -p 4200 --host 0.0.0.0 --no-source-maps --open",
     "lint-fix": "eslint --ext tsx --fix ./src",
     "lint": "eslint --ext tsx ./src",
     "preformat": "npm run clean",
@@ -37,11 +37,6 @@
     "react-dom": "^16.14.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.14.2",
-    "@babel/preset-env": "^7.14.2",
-    "@babel/preset-react": "^7.13.13",
-    "@babel/preset-typescript": "^7.13.0",
-    "@parcel/transformer-typescript-tsc": "^2.0.0-alpha.3",
     "@types/node": "^15.0.3",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.4",
