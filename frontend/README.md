@@ -1,3 +1,3 @@
-# react-ts-material-parcel-graphql-boilerplate
+# react-ts-material-webpack-graphql-boilerplate
 
-Boiler plate code for React with TypeScript Material-ui Parcel bundler and Apollo GraphQL
+Boiler plate code for React with TypeScript Material-ui Webpack and Apollo GraphQL

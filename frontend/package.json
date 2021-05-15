@@ -1,7 +1,7 @@
 {
-  "name": "react-ts-material-parcel-graphql-boilerplate",
+  "name": "react-ts-material-webpack-graphql-boilerplate",
   "version": "1.0.0",
-  "description": "Boiler plate code for React with TypeScript Material-ui Parcel bundler and Apollo GraphQL",
+  "description": "Boiler plate code for React with TypeScript Material-ui Webpack and Apollo GraphQL",
   "main": "dist/index.html",
   "browserslist": "> 0.2%",
   "scripts": {
@@ -15,17 +15,9 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "codegen": "npx apollo client:codegen --target=typescript --addTypename --endpoint=http://localhost:3000/graphql --outputFlat=src/graphql"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ersanyamarya/react-ts-material-parcel-graphql-boilerplate.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ersanyamarya/react-ts-material-parcel-graphql-boilerplate/issues"
-  },
-  "homepage": "https://github.com/ersanyamarya/react-ts-material-parcel-graphql-boilerplate#readme",
   "dependencies": {
     "@apollo/client": "^3.3.17",
     "@material-ui/core": "^4.11.4",
