@@ -7,13 +7,13 @@ import { Router, RouteComponentProps } from '@reach/router'
 import { CssBaseline, ThemeProvider } from '@material-ui/core'
 import theme from './theme'
 import client from './graphql/apollo'
-
+import './main.css'
 const Components = lazy(() => import('./pages/components'))
 const People = lazy(() => import('./pages/people'))
 const NotFound = lazy(() => import('./pages/404'))
 
 const RouterPage = (props: { pageComponent: ReactElement } & RouteComponentProps) => props.pageComponent
-
+import './main.css'
 const Application = () => (
   <Suspense fallback={<div className="spin"></div>}>
     <ThemeProvider theme={theme}>

@@ -1,23 +1,23 @@
 version: "3"
 services:
-  ui:
+  fe:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: local.Dockerfile
     ports:
       - "4200:4200"
     env_file:
       - frontend/.env
     volumes:
       - ./frontend/src:/home/node/app/src
-    command: npm run parcel:start
+    command: npm run start
 
   backend:
     links:
       - mongo
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: local.Dockerfile
     ports:
       - "3000:3000"
     env_file:

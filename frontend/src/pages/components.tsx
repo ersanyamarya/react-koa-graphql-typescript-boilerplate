@@ -5,7 +5,7 @@ export default function Components(): ReactElement {
   return (
     <Fragment>
       <Typography variant="h1" component="h1">
-        Heading 10
+        Heading 1
       </Typography>
       <Typography variant="h2" component="h2">
         Heading 2

@@ -3,8 +3,6 @@ dist
 .github
 .devcontainer
 docker-compose.yml
-docker-compose.override.yml
 Dockerfile
 local.Dockerfile
-out
-mongodata
+.cache
